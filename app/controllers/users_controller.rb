@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user =　XXX
+    @user =　Book.all
     @books = @user.books
   end
 
