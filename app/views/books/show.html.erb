@@ -18,8 +18,10 @@
     </thead>
     <tr>
       <td>
-        <%= link_to attachment_image_tag(@user, :profile_image, :fill, size:'100x100' , format: 'jpg', fallback: "no_image.jpg"),user_path(@user.id) %><br>
-        <%= link_to @user.name, user_path(@user.id) %></td>
+            <%= link_to(user_path(@user.id)) do %>
+            <%= image_tag @user.get_profile_image(100,100) %>
+      <% end %>
+      <%= link_to @user.name, user_path(@user.id) %></td>
 
 
       <td><%= link_to @book.title, book_path(@book.id) %></td>

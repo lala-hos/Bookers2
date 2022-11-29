@@ -41,9 +41,9 @@ ActiveRecord::Schema.define(version: 2022_11_15_095254) do
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "name"
-    t.text "body"
-    t.integer "user_id"
+    t.text "title", default: "", null: false
+    t.string "body", default: "", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -51,11 +51,12 @@ ActiveRecord::Schema.define(version: 2022_11_15_095254) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "profile_image_id"
+    t.string "name", default: "", null: false
+    t.string "introduction", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.string "name"
-    t.string "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
