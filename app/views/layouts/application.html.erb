@@ -11,10 +11,14 @@
   </head>
 
   <body>
-  <header>
-      <li>
-        <%= link_to "Bookers", root_path %>
-      </li>
+   <header>
+       <div class="navbar navbar-inverse">
+       <div class="navbar-left text-muted">
+       <h2 class="title">Bookers</h2>
+       </div>
+
+    <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn">
+
     <% if user_signed_in? %>
       <li>
         <%= link_to "Homes", root_path %>
@@ -57,3 +61,5 @@
 
   </body>
 </html>
+
+
