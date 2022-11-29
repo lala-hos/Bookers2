@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bookers2</title>
+<head>
+    <script src="https://kit.fontawesome.com/*******.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-　　<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -35,7 +36,9 @@
       <%= link_to "Books", books_path %>
       </li>
       <li>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <%= link_to destroy_user_session_path, method: :delete , class: 'nav-link text-light' do%>
+        <i class="fas fa-sign-out-alt"></i> Log out
+         <% end %>
       </li>
     <% else %>
       <li>
@@ -56,6 +59,10 @@
     </div>
     </nav>
   </header>
+  <% flash.each do |message_type, message| %>
+    <%= content_tag :div, message, class: message_type %>
+    <% end %>
+
     <%= yield %>
 
     <footer>
