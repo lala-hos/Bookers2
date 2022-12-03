@@ -1,9 +1,3 @@
-<%= flash[:notice] %>
-<% if flash[:success] %>
-<div class="flash">
-  <%= flash[:success] %>
-</div>
-<% end %>
 <div class="container px-5 px-sm-0">
   <div class="row">
 
@@ -15,7 +9,7 @@
     <thead>
       <th></th>
       <th>title</th>
-      <th>body</th>
+      <th>opinion</th>
     </thead>
     <% @books.each do |f| %>
     <tr>
